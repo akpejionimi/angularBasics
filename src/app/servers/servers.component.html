@@ -1,8 +1,20 @@
+<!-- Manually listening to event without using ngModel-->
+<!-- <label for="Server Name">
+    <input class="form-control" type="text" (input)="onUpdateServerName($event)">
+</label> -->
 
-<button class="btn btn-primary" [disabled]="!allowNewServer"
-(click)="onCreatedServer()">
-Add server</button>
+<!-- Using ngModel. onUpdateServerName method is not required here-->
+<label for="ServerName">
+    <input type="text" class="form-control" [(ngModel)]="serverName">
+</label>
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreatedServer($event)">
+    Add server</button>
+
+<p>{{serverName}}</p>
+
 <p>{{serverCreatedSatus}}</p>
+
 <app-server></app-server>
 <div app-warning> </div>
 <warning-danger></warning-danger>
