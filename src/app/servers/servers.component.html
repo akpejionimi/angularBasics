@@ -11,10 +11,24 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreatedServer($event)">
     Add server</button>
 
-<p>{{serverName}}</p>
-
+<!-- <p>{{serverName}}</p> -->
 <p>{{serverCreatedSatus}}</p>
+
+<hr>
 
 <app-server></app-server>
 <div app-warning> </div>
 <warning-danger></warning-danger>
+<hr>
+
+<!-- //Assignment -->
+
+<label for="UserName">
+    <input type="text" class="form-control" [(ngModel)]="userName" >
+</label>
+
+<button class="btn btn-primary" [disabled]="userName === ''" (click)= "onCreateUserName()">
+    Add UserName</button>
+
+<p>{{userName}}</p>
+<p>{{userNameStatus}}</p>
