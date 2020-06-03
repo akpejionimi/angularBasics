@@ -12,11 +12,16 @@
     Add server</button>
 
 <!-- <p>{{serverName}}</p> -->
-<p>{{serverCreatedSatus}}</p>
+<!-- <p>{{serverCreatedSatus}}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, Server name is {{ serverName }}</p>
 
+<!-- using else with ngIf -->
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
 <hr>
 
-<app-server></app-server>
+<app-server  *ngFor="let server of servers"></app-server>
 <div app-warning> </div>
 <warning-danger></warning-danger>
 <hr>
@@ -32,3 +37,4 @@
 
 <p>{{userName}}</p>
 <p>{{userNameStatus}}</p>
+

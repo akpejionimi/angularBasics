@@ -1,6 +1,11 @@
-<h5>The server Component</h5>
-<h2>data binding by string interpolation</h2>
-<p>server with serverID {{ serverID}} is currently {{serverStatus}} </p>
+<!-- <h5>The server Component</h5>
+<h2>data binding by string interpolation</h2> -->
+<!-- <p>server with serverID {{ serverID}} is currently {{serverStatus}} </p> -->
 <!-- <p>server with serverID {{ serverID}} is currently {{getServerStatus()}} </p> -->
+<!-- <p [ngStyle]= "{backgroundColor : getColor()}">server with serverID {{ serverID}} is currently {{getServerStatus()}} </p> -->
+<p [ngStyle]= "{backgroundColor : getColor()}" 
+[ngClass] = "{online : serverStatus === 'online'}">
+server with serverID {{ serverID}} is currently {{getServerStatus()}} 
+</p>
 
 

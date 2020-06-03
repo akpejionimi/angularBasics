@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
   serverName = "";
   userName = "";
   allowClick = false;
+  serverCreated = false;
+  servers = ['test','test 2'];
 
   constructor() { 
     setTimeout(() => {
@@ -22,20 +24,14 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  disableEmpty(){
-    if (this.userName === "") {
-      this.allowClick= true
-    } else{
-      this.allowClick = false
-    }
-  }
-
   onCreateUserName(){
     this.userNameStatus = "username was created. your username is " +  this.userName
   }
 
 
   onCreatedServer(e) {
+    this.servers.push(this.serverName)
+    this.serverCreated = true;
     this.serverCreatedSatus ="Server was Created. Name is " + this.serverName
     // console.log("submit");
     
