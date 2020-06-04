@@ -5,6 +5,17 @@
       <hr class="underline">
       <h4>Mark</h4>
       <app-servers></app-servers>
+
+
+      <!-- Assignment on Directives -->
+      <button class="btn btn-primary" (click)="onToggleDetails()">Toggle display</button>
+      <p *ngIf="showSecrete">Secrete password = fang</p>
+      <div *ngFor ="let logItem of logs"
+      [ngStyle]="{backgroundColor : logItem >= 5 ? 'blue' : 'white'}"
+      [ngClass]="{'white-text': logItem >= 5}"
+      >{{logItem}}</div>
+      <!-- [ngStyle]="{color : logItem >= 5 ? 'blue' : 'red'}" -->
+
     </div>
   </div>
 </div>

@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  showSecrete = false;
+  logs = []
 
+  constructor(){
+  }
+ 
+  onToggleDetails(){
+    this.showSecrete = !this.showSecrete
+    this.logs.push(this.logs.length + 1)
+  }
 }
          
